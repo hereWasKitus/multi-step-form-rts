@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("@/assets/fonts/Ubuntu-Regular.ttf");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("@/assets/fonts/Ubuntu-Medium.ttf");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ubuntu";
+  src: url("@/assets/fonts/Ubuntu-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@layer base {
+  body {
+    width: theme("width.screen");
+    height: theme("height.screen");
+    font-family: theme("fontFamily.ubuntu");
+    background-color: hsla(218, 100%, 97%, 1);
+  }
+
+  #root {
+    @apply flex h-screen w-screen items-center justify-center px-4;
+  }
+}
+
+@layer components {
+  .heading {
+    @apply text-heading font-bold text-marine-blue;
+  }
+
+  .subheading {
+    @apply mb-9 text-body-lg text-cool-gray;
+  }
+}

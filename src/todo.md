@@ -1,0 +1,4 @@
+- [x] Put everything inside <form> tag
+- [x] Replace external object state with useForm state
+- [ ] Move form logic from <Step /> to a separate component
+- [ ] Modify <Switch /> component to allow switching between 2 values
