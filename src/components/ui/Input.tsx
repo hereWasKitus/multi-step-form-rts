@@ -8,20 +8,21 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { label, errorMessage, ...props }: InputProps,
+    { label, errorMessage, id, ...props }: InputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
     return (
-      <label>
+      <div>
         {Boolean(label) && (
-          <span
+          <label
+            htmlFor={id}
             className={clsx([
               "mb-2 inline-block text-body-md text-marine-blue",
               "md:mb-1 md:text-body-sm",
             ])}
           >
             {label}
-          </span>
+          </label>
         )}
 
         {Boolean(errorMessage) && (
@@ -36,6 +37,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
 
         <input
+          id={id}
           className={clsx(
             [
               "w-full px-4 py-3",
@@ -50,7 +52,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
-      </label>
+      </div>
     );
   },
 );

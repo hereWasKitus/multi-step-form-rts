@@ -1,5 +1,5 @@
 import { Sidebar } from "@/components/Sidebar";
-import Steps from "./components/Steps/Steps";
+import { Steps } from "./components/Steps";
 import clsx from "clsx";
 
 function App() {

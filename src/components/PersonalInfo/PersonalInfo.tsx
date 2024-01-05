@@ -21,6 +21,7 @@ function PersonalInfo() {
         </p>
         <div className={clsx(["flex flex-col gap-6", "md:gap-4"])}>
           <Input
+            id="name"
             autoComplete="name"
             label="Name"
             type="text"
@@ -29,6 +30,7 @@ function PersonalInfo() {
             {...register("name")}
           />
           <Input
+            id="email"
             autoComplete="email"
             label="Email Address"
             type="email"
@@ -37,6 +39,7 @@ function PersonalInfo() {
             {...register("email")}
           />
           <Input
+            id="phone"
             autoComplete="phone"
             label="Phone Number"
             type="tel"

@@ -4,7 +4,7 @@ import { activeStepAtom } from "@/atoms";
 import { FormFields } from "@/types";
 import { useSetAtom } from "jotai";
 import { useFormContext } from "react-hook-form";
-import Step from "../ui/Step";
+import Step from "@/components/ui/Step";
 import clsx from "clsx";
 
 function Summary() {
@@ -49,7 +49,7 @@ function Summary() {
                       "md:text-body-md",
                     ])}
                   >
-                    {selectedPlan?.name} ({isYearly ? "Yearly" : "Monthly"})
+                    {selectedPlan?.label} ({isYearly ? "Yearly" : "Monthly"})
                   </h3>
                   <button
                     className="text-body-md text-cool-gray underline"

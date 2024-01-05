@@ -53,7 +53,7 @@ function SelectPlan() {
                   </div>
                   <div>
                     <h3 className="mb-2 text-body-lg font-medium leading-none text-marine-blue">
-                      {plan.name}
+                      {plan.label}
                     </h3>
                     <p className="text-body-md text-cool-gray">{priceString}</p>
                   </div>

@@ -5,18 +5,21 @@ import iconPro from "@/assets/images/icon-pro.svg";
 export const plans = [
   {
     name: "arcade",
+    label: "Arcade",
     perMonth: 9,
     perYear: 90,
     icon: iconArcade,
   },
   {
     name: "advanced",
+    label: "Advanced",
     perMonth: 12,
     perYear: 120,
     icon: iconAdvanced,
   },
   {
     name: "pro",
+    label: "Pro",
     perMonth: 15,
     perYear: 150,
     icon: iconPro,
