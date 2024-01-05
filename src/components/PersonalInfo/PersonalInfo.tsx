@@ -1,7 +1,9 @@
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { FormFields } from "@/types";
+import clsx from "clsx";
 import { useFormContext } from "react-hook-form";
+import Step from "../ui/Step";
 
 function PersonalInfo() {
   const {
@@ -10,13 +12,14 @@ function PersonalInfo() {
   } = useFormContext<FormFields>();
 
   return (
-    <div className="flex h-full flex-col">
-      <h1 className="heading">Personal info</h1>
-      <p className="mb-9 text-body-lg text-cool-gray">
-        Please provide your name, email address, and phone number.
-      </p>
-      <div className="flex grow flex-col">
-        <div className="flex flex-col gap-6">
+    <Step>
+      <Step.Body>
+        <h1 className="heading">Personal info</h1>
+
+        <p className="subheading">
+          Please provide your name, email address, and phone number.
+        </p>
+        <div className={clsx(["flex flex-col gap-6", "md:gap-4"])}>
           <Input
             autoComplete="name"
             label="Name"
@@ -42,11 +45,12 @@ function PersonalInfo() {
             {...register("phone")}
           />
         </div>
-        <div className="mt-auto text-right">
-          <Button type="submit">Next Step</Button>
-        </div>
-      </div>
-    </div>
+      </Step.Body>
+
+      <Step.Bottom alignment="end">
+        <Button type="submit">Next Step</Button>
+      </Step.Bottom>
+    </Step>
   );
 }
 

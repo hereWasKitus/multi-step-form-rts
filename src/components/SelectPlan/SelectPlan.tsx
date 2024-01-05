@@ -6,6 +6,8 @@ import { FormFields } from "@/types";
 import { useSetAtom } from "jotai";
 import { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
+import Step from "../ui/Step";
+import clsx from "clsx";
 
 function SelectPlan() {
   const setActiveStep = useSetAtom(activeStepAtom);
@@ -20,46 +22,62 @@ function SelectPlan() {
   }
 
   return (
-    <div className="flex h-full flex-col">
-      <h1 className="heading">Select your plan</h1>
-      <p className="subheading">
-        You have the option of monthly or yearly billing.
-      </p>
+    <Step>
+      <Step.Body>
+        <h1 className="heading">Select your plan</h1>
 
-      <ul className="mb-8 grid grid-cols-3 gap-4">
-        {plans.map((plan) => {
-          const priceString = isYearly
-            ? `$${plan.perYear}/yr`
-            : `$${plan.perMonth}/mo`;
-          return (
-            <li key={plan.name}>
-              <label className="relative block cursor-pointer rounded-sm border border-border-gray bg-white px-4 py-5 transition-colors hover:border-purplish-blue has-[:checked]:border-purplish-blue has-[:focus]:border-purplish-blue has-[:checked]:bg-alabaster">
-                <div className="mb-10">
-                  <img src={plan.icon} alt={`${plan.name} icon`} />
-                </div>
-                <h3 className="mb-2 text-body-lg font-medium leading-none text-marine-blue">
-                  {plan.name}
-                </h3>
-                <p className="text-body-md text-cool-gray">{priceString}</p>
-                <input
-                  value={plan.name}
-                  type="radio"
-                  {...register("plan")}
-                  className="absolute left-0 top-0 h-[1px] w-[1px] overflow-hidden opacity-0"
-                />
-              </label>
-            </li>
-          );
-        })}
-      </ul>
+        <p className="subheading">
+          You have the option of monthly or yearly billing.
+        </p>
 
-      <div className="flex items-center justify-center gap-6 rounded-sm bg-alabaster py-[14px]">
-        <span className="text-body-md font-bold text-marine-blue">Monthly</span>
-        <Switch checked={isYearly} onChange={handleSubscriptionTypeChange} />
-        <span className="text-body-md font-bold text-cool-gray">Yearly</span>
-      </div>
+        <ul
+          className={clsx([
+            "mb-8 grid grid-cols-3 gap-4",
+            "md:mb-6 md:grid-cols-1 md:gap-3",
+          ])}
+        >
+          {plans.map((plan) => {
+            const priceString = isYearly
+              ? `$${plan.perYear}/yr`
+              : `$${plan.perMonth}/mo`;
+            return (
+              <li key={plan.name}>
+                <label
+                  className={clsx([
+                    "relative flex cursor-pointer flex-col gap-10 rounded-sm border border-border-gray bg-white px-4 py-5 transition-colors hover:border-purplish-blue has-[:checked]:border-purplish-blue has-[:focus]:border-purplish-blue has-[:checked]:bg-alabaster",
+                    "items-center md:flex-row md:gap-3 md:py-4",
+                  ])}
+                >
+                  <div>
+                    <img src={plan.icon} alt={`${plan.name} icon`} />
+                  </div>
+                  <div>
+                    <h3 className="mb-2 text-body-lg font-medium leading-none text-marine-blue">
+                      {plan.name}
+                    </h3>
+                    <p className="text-body-md text-cool-gray">{priceString}</p>
+                  </div>
+                  <input
+                    value={plan.name}
+                    type="radio"
+                    {...register("plan")}
+                    className="absolute left-0 top-0 h-[1px] w-[1px] overflow-hidden opacity-0"
+                  />
+                </label>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="flex items-center justify-center gap-6 rounded-sm bg-alabaster py-[14px]">
+          <span className="text-body-md font-bold text-marine-blue">
+            Monthly
+          </span>
+          <Switch checked={isYearly} onChange={handleSubscriptionTypeChange} />
+          <span className="text-body-md font-bold text-cool-gray">Yearly</span>
+        </div>
+      </Step.Body>
 
-      <div className="mt-auto flex justify-between">
+      <Step.Bottom>
         <Button
           type="button"
           data-variant="ghost"
@@ -68,8 +86,8 @@ function SelectPlan() {
           Go Back
         </Button>
         <Button type="submit">Next Step</Button>
-      </div>
-    </div>
+      </Step.Bottom>
+    </Step>
   );
 }
 

@@ -25,6 +25,7 @@ function Button({ children, ...props }: ButtonProps) {
           "data-[variant=ghost]:text-cool-gray",
           "data-[variant=ghost]:hover:bg-slate-100",
         ],
+        "md:px-4 md:py-3 md:text-body-md",
       )}
     >
       {children}

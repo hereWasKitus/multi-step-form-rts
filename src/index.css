@@ -28,20 +28,23 @@
     width: theme("width.screen");
     height: theme("height.screen");
     font-family: theme("fontFamily.ubuntu");
-    background-color: hsla(218, 100%, 97%, 1);
+    background-color: theme("backgroundColor.background");
   }
 
   #root {
     @apply flex h-screen w-screen items-center justify-center px-4;
+    @apply md:px-0;
   }
 }
 
 @layer components {
   .heading {
     @apply text-heading font-bold text-marine-blue;
+    @apply text-2xl;
   }
 
   .subheading {
     @apply mb-9 text-body-lg text-cool-gray;
+    @apply md:mb-5;
   }
 }

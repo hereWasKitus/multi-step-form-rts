@@ -14,13 +14,23 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     return (
       <label>
         {Boolean(label) && (
-          <span className="mb-2 inline-block text-body-md text-marine-blue">
+          <span
+            className={clsx([
+              "mb-2 inline-block text-body-md text-marine-blue",
+              "md:mb-1 md:text-body-sm",
+            ])}
+          >
             {label}
           </span>
         )}
 
         {Boolean(errorMessage) && (
-          <span className="float-right mb-2 inline-block text-body-md font-bold text-strawberry-red">
+          <span
+            className={clsx([
+              "float-right mb-2 inline-block text-body-md font-bold text-strawberry-red",
+              "md:mb-1 md:text-body-sm",
+            ])}
+          >
             {errorMessage}
           </span>
         )}

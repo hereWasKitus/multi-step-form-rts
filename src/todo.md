@@ -1,4 +1,7 @@
 - [x] Put everything inside <form> tag
 - [x] Replace external object state with useForm state
-- [ ] Move form logic from <Step /> to a separate component
+- [ ] Move form logic from <Steps /> to a separate component
 - [ ] Modify <Switch /> component to allow switching between 2 values
+- [ ] Think more about <Step /> component and it's compounds usage
+- [ ] Add animation
+- [ ] Move to stylex ?

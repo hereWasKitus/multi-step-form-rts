@@ -7,8 +7,15 @@ function Sidebar() {
   const [activeStep] = useAtom(activeStepAtom);
 
   return (
-    <aside className="basis-[274px] rounded-md bg-white bg-[url(@/assets/images/bg-sidebar-desktop.svg)] px-8 py-10">
-      <ul className="grid gap-8">
+    <aside
+      className={clsx([
+        "basis-[274px] rounded-md bg-white bg-[url(@/assets/images/bg-sidebar-desktop.svg)] px-8 py-10",
+        "bg-cover md:basis-[172px] md:rounded-none md:bg-[url(@/assets/images/bg-sidebar-mobile.svg)] md:bg-no-repeat md:py-8",
+      ])}
+    >
+      <ul
+        className={clsx(["grid gap-8", "md:flex md:justify-center md:gap-4"])}
+      >
         {steps.map((step, index) => (
           <li
             key={step.name}
@@ -24,7 +31,7 @@ function Sidebar() {
             >
               {index + 1}
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col md:hidden">
               <p className="text-body-sm uppercase text-light-blue">
                 step {index + 1}
               </p>

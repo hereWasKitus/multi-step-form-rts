@@ -10,6 +10,7 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { FormFields, FormSchema } from "@/types";
 import { plans, steps } from "@/data";
 import { ThankYou } from "../ThankYou";
+import clsx from "clsx";
 
 function Steps() {
   const [activeStep, setActiveStep] = useAtom(activeStepAtom);
@@ -19,6 +20,7 @@ function Steps() {
     defaultValues: {
       plan: plans[0].name,
       subscriptionType: "monthly",
+      addOns: [],
     },
   });
 
@@ -57,7 +59,10 @@ function Steps() {
       <FormProvider {...methods}>
         <form
           action="#"
-          className="mx-auto w-full max-w-md pt-10"
+          className={clsx([
+            "mx-auto w-full max-w-md pt-10",
+            "md:max-w-none md:pt-0",
+          ])}
           onSubmit={methods.handleSubmit(onSubmit)}
         >
           {renderStep()}

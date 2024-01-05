@@ -18,6 +18,7 @@ export default {
         magnolia: "hsl(217, 100%, 97%)",
         alabaster: "hsl(231, 100%, 99%)",
         white: "hsl(0, 0%, 100%)",
+        background: "hsla(218, 100%, 97%, 1)",
       },
       fontSize: {
         heading: "32px",
@@ -33,17 +34,11 @@ export default {
     },
     screens: {
       xl: { max: "1279px" },
-      // => @media (max-width: 1279px) { ... }
-
       lg: { max: "1023px" },
-      // => @media (max-width: 1023px) { ... }
-
       md: { max: "767px" },
-      // => @media (max-width: 767px) { ... }
-
       sm: { max: "639px" },
-      // => @media (max-width: 639px) { ... }
     },
   },
+  safelist: ["justify-between", "justify-end", "justify-start"],
   plugins: [],
 };
