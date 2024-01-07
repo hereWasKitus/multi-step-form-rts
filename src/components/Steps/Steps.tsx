@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 function Steps() {
   const [activeStep, setActiveStep] = useAtom(activeStepAtom);
-  const [finished, setFinished] = useIsFinished();
+  const [isFinished, setIsFinished] = useIsFinished();
   const methods = useForm<FormFields>({
     resolver: valibotResolver(FormSchema),
     defaultValues: {
@@ -29,14 +29,15 @@ function Steps() {
     const nextIndex = currentIndex + 1;
 
     if (nextIndex === steps.length) {
-      setFinished(true);
+      setIsFinished(true);
+      return;
     }
 
     setActiveStep(steps[nextIndex]?.name);
   };
 
   const renderStep = useCallback(() => {
-    if (finished) {
+    if (isFinished) {
       return <ThankYou />;
     }
 
@@ -52,10 +53,10 @@ function Steps() {
       default:
         return <div>no :(</div>;
     }
-  }, [activeStep]);
+  }, [activeStep, isFinished]);
 
   return (
-    <div className="flex grow">
+    <div className="flex grow px-4 md:px-0">
       <FormProvider {...methods}>
         <form
           action="#"

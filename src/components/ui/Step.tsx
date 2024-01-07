@@ -5,7 +5,7 @@ type StepProps = {} & PropsWithChildren;
 
 const Step = ({ children }: StepProps) => {
   return (
-    <div className={clsx(["flex h-full flex-col", "md:px-4"])}>{children}</div>
+    <div className={clsx([" flex h-full flex-col", "md:px-4"])}>{children}</div>
   );
 };
 
@@ -13,7 +13,7 @@ type BodyProps = {} & PropsWithChildren;
 
 const Body = ({ children }: BodyProps) => {
   return (
-    <div className="h-full md:-mt-16 md:h-fit md:rounded-md md:bg-white md:px-6 md:py-8">
+    <div className="animate-step-swap h-full md:-mt-16 md:h-fit md:rounded-md md:bg-white md:px-6 md:py-8">
       {children}
     </div>
   );

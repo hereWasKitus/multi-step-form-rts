@@ -31,6 +31,21 @@ export default {
         md: "10px",
         sm: "8px",
       },
+      animation: {
+        "step-swap": "slide-in .15s ease",
+      },
+      keyframes: {
+        "slide-in": {
+          from: {
+            opacity: 0,
+            transform: "translateX(-20px)",
+          },
+          to: {
+            opacity: 1,
+            transform: "translateX(0)",
+          },
+        },
+      },
     },
     screens: {
       xl: { max: "1279px" },

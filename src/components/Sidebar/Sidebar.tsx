@@ -24,12 +24,13 @@ function Sidebar() {
           >
             <div
               className={clsx([
-                "row-span-2 flex h-8 w-8 items-center justify-center",
+                "relative row-span-2 flex h-8 w-8 items-center justify-center",
                 "text-body-md font-bold uppercase text-white group-data-[active=true]:text-marine-blue",
-                "rounded-full border border-white bg-transparent group-data-[active=true]:border-light-blue group-data-[active=true]:bg-light-blue",
+                "rounded-full border border-white bg-transparent group-data-[active=true]:border-light-blue ",
               ])}
             >
-              {index + 1}
+              <span className="z-10">{index + 1}</span>
+              <div className="absolute left-1/2 top-1/2 h-0 w-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-transparent transition-all group-data-[active=true]:h-full group-data-[active=true]:w-full group-data-[active=true]:bg-light-blue" />
             </div>
             <div className="flex flex-col md:hidden">
               <p className="text-body-sm uppercase text-light-blue">
