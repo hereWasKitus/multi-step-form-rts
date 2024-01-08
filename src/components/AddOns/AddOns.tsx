@@ -1,11 +1,11 @@
-import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
+import { Button } from "@/components/ui/Button";
+import Checkbox from "@/components/ui/Checkbox/Checkbox";
 import { addOns } from "@/data";
 import { activeStepAtom } from "@/atoms";
 import { FormFields } from "@/types";
 import { useSetAtom } from "jotai";
 import { useFormContext } from "react-hook-form";
-import Step from "../ui/Step";
+import { Step } from "@/components/ui/Step";
 import clsx from "clsx";
 
 function AddOns() {

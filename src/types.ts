@@ -10,13 +10,10 @@ export const FormSchema = v.object({
   email: v.string([v.email("Invalid email")]),
   phone: v.string([
     v.regex(
-      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+      /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
       "Invalid phone number",
     ),
   ]),
-  // plan: v.union(plans.map((plan) => v.literal(plan.name))),
-  // subscriptionType: v.union([v.literal("monthly"), v.literal("yearly")]),
-  // addOns: v.array(v.union(addOns.map((addOn) => v.literal(addOn.name)))),
 });
 
 export type FormFields = v.Input<typeof FormSchema> & {

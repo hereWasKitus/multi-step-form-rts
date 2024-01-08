@@ -1,8 +1,9 @@
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 
-type SwitchProps = {} & InputHTMLAttributes<HTMLInputElement>;
-
-function Switch(props: SwitchProps, ref: ForwardedRef<HTMLInputElement>) {
+function Switch(
+  props: InputHTMLAttributes<HTMLInputElement>,
+  ref: ForwardedRef<HTMLInputElement>,
+) {
   return (
     <label className="relative flex h-5 w-9 items-center rounded-full bg-marine-blue">
       <input
@@ -16,4 +17,7 @@ function Switch(props: SwitchProps, ref: ForwardedRef<HTMLInputElement>) {
   );
 }
 
-export default forwardRef<HTMLInputElement, SwitchProps>(Switch);
+export default forwardRef<
+  HTMLInputElement,
+  InputHTMLAttributes<HTMLInputElement>
+>(Switch);

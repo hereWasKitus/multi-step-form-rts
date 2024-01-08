@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Step from "../ui/Step";
+import { Step } from "../ui/Step";
 
 function Summary() {
   return (

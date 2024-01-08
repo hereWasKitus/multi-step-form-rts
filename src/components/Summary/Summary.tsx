@@ -1,10 +1,10 @@
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/Button/Button";
 import { addOns, plans } from "@/data";
 import { activeStepAtom } from "@/atoms";
 import { FormFields } from "@/types";
 import { useSetAtom } from "jotai";
 import { useFormContext } from "react-hook-form";
-import Step from "@/components/ui/Step";
+import { Step } from "@/components/ui/Step";
 import clsx from "clsx";
 
 function Summary() {

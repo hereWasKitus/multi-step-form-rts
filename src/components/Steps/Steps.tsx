@@ -56,7 +56,7 @@ function Steps() {
   }, [activeStep, isFinished]);
 
   return (
-    <div className="flex grow px-4 md:px-0">
+    <div role="main" className="flex grow px-4 md:px-0">
       <FormProvider {...methods}>
         <form
           action="#"

@@ -1,17 +1,13 @@
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
-type StepProps = {} & PropsWithChildren;
-
-const Step = ({ children }: StepProps) => {
+const Step = ({ children }: PropsWithChildren) => {
   return (
     <div className={clsx([" flex h-full flex-col", "md:px-4"])}>{children}</div>
   );
 };
 
-type BodyProps = {} & PropsWithChildren;
-
-const Body = ({ children }: BodyProps) => {
+const Body = ({ children }: PropsWithChildren) => {
   return (
     <div className="animate-step-swap h-full md:-mt-16 md:h-fit md:rounded-md md:bg-white md:px-6 md:py-8">
       {children}

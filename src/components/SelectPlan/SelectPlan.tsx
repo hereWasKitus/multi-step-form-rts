@@ -1,12 +1,12 @@
-import Button from "@/components/ui/Button";
-import Switch from "@/components/ui/Switch";
+import Button from "@/components/ui/Button/Button";
+import { Switch } from "@/components/ui/Switch";
 import { plans } from "@/data";
 import { activeStepAtom } from "@/atoms";
 import { FormFields } from "@/types";
 import { useSetAtom } from "jotai";
 import { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
-import Step from "../ui/Step";
+import { Step } from "@/components/ui/Step";
 import clsx from "clsx";
 
 function SelectPlan() {

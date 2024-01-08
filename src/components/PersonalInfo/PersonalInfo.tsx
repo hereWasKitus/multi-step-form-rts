@@ -1,9 +1,9 @@
-import Button from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button/Button";
+import { Input } from "@/components/ui/Input";
 import { FormFields } from "@/types";
 import clsx from "clsx";
 import { useFormContext } from "react-hook-form";
-import Step from "../ui/Step";
+import { Step } from "@/components/ui/Step";
 
 function PersonalInfo() {
   const {
@@ -40,7 +40,7 @@ function PersonalInfo() {
           />
           <Input
             id="phone"
-            autoComplete="phone"
+            autoComplete="tel"
             label="Phone Number"
             type="tel"
             placeholder="e.g. +1 234 567 890"
