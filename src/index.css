@@ -29,11 +29,12 @@
     height: theme("height.screen");
     font-family: theme("fontFamily.ubuntu");
     background-color: theme("backgroundColor.background");
+    @apply md:fixed;
   }
 
   #root {
-    @apply flex h-screen w-screen items-center justify-center px-4;
-    @apply md:px-0;
+    @apply flex h-full w-full items-center justify-center px-4;
+    @apply md:fixed md:px-0;
   }
 }
 
